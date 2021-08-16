@@ -1,14 +1,19 @@
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 export default function Page(props) {
-    const { isFallback } = useRouter();
+  const router = useRouter();
 
-    if (isFallback) {
-        return <></>;
-    }
+  console.log("Page props", router);
 
-    return <div>
-        <h1>{props.name}</h1>
-        <p>{props.description}</p>
+  if (router.isFallback) {
+    return <>fallback... </>;
+  }
+
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <p>{props.description}</p>
+      <p>{props.date}</p>
     </div>
+  );
 }

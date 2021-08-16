@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -11,15 +11,43 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to my demo!
-        </h1>
+        <h1 className={styles.title}>Welcome to my demo!</h1>
 
         <div className={styles.grid}>
-          <Link href="/isr">
+          <Link href="/isr/fallback-blocking/1">
             <a className={styles.card}>
-              <h3>ISR &rarr;</h3>
-              <p>Fetches a random public API every revalidation period</p>
+              <h3>ISR - fallback blocking&rarr;</h3>
+              <p>already generated</p>
+            </a>
+          </Link>
+          <Link href="/isr/fallback-blocking/2">
+            <a className={styles.card}>
+              <h3>ISR - fallback blocking&rarr;</h3>
+              <p>not generated</p>
+            </a>
+          </Link>
+          <Link href="/isr/fallback-true/1">
+            <a className={styles.card}>
+              <h3>ISR - fallback true&rarr;</h3>
+              <p>already generated</p>
+            </a>
+          </Link>
+          <Link href="/isr/fallback-true/2">
+            <a className={styles.card}>
+              <h3>ISR - fallback true&rarr;</h3>
+              <p>not generated</p>
+            </a>
+          </Link>
+          <Link href="/isr/fallback-false/1">
+            <a className={styles.card}>
+              <h3>ISR - fallback false&rarr;</h3>
+              <p>already generated</p>
+            </a>
+          </Link>
+          <Link href="/isr/fallback-false/2">
+            <a className={styles.card}>
+              <h3>ISR - fallback false&rarr;</h3>
+              <p>not generated</p>
             </a>
           </Link>
 
@@ -39,5 +67,5 @@ export default function Home() {
         </div>
       </main>
     </div>
-  )
+  );
 }
