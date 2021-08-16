@@ -14,6 +14,7 @@ export default function Page(props) {
       <h1>{props.name}</h1>
       <p>{props.description}</p>
       <p>{props.date}</p>
+      <pre>{JSON.stringify(router.query, null, 2)}</pre>
     </div>
   );
 }
